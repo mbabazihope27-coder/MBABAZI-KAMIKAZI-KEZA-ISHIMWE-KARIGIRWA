@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Registration Form</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .box{
+            width: 350px;
+            background: white;
+            margin: 60px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: darkred;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: red;
+        }
+
+        #message{
+            text-align: center;
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Book Registration</h2>
+
+    <form onsubmit="registerBook(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <input type="text" id="book" placeholder="Book Title" required>
+
+        <select required>
+            <option value="">Select Category</option>
+            <option>Fiction</option>
+            <option>Non-Fiction</option>
+            <option>Education</option>
+            <option>Science</option>
+        </select>
+
+        <button type="submit">Register Book</button>
+    </form>
+
+    <p id="message"></p>
+</div>
+
+<script>
+    function registerBook(event){
+        event.preventDefault();
+
+        document.getElementById("message").innerHTML =
+        "Book Registered Successfully!";
+    }
+</script>
+
+</body>
+</html>
